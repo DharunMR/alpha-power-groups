@@ -25,18 +25,26 @@ function AboutPage() {
           <h1>Built for critical systems. Trusted for precise delivery.</h1>
           <p>Alpha Power Electromechanical Contracting LLC is a premier engineering and contracting company based in Abu Dhabi, specializing in electromechanical works for the Power and Oil &amp; Gas sectors.</p>
         </section>
-        <section className="mx-auto grid max-w-7xl gap-12 px-6 pb-24 md:grid-cols-[1.1fr_0.9fr] md:items-start">
-          <div className="space-y-6 text-muted-foreground">
+        <section className="mx-auto max-w-7xl px-6 pb-24">
+          <div className="rounded-3xl border border-primary/20 bg-card p-8 shadow-xl md:p-14">
             <p className="eyebrow">Who we are</p>
-            <h2 className="font-display text-4xl text-foreground md:text-5xl">Engineering confidence into every connection.</h2>
-            <p>With over a decade of expertise, we have established ourselves as a trusted partner, delivering high-quality, reliable, and innovative solutions to major clients across the UAE and beyond.</p>
-            <p>Our commitment to engineering excellence, safety, and sustainability drives us to provide cutting-edge power solutions, including substation works, cable installations, control systems, relay protection, automation, and renewable energy projects.</p>
-            <p>Backed by a team of highly skilled professionals, we ensure every project meets the highest industry standards, adhering to strict regulatory compliance and best practices. We empower industries with efficient, cost-effective, and future-ready electromechanical solutions for a sustainable tomorrow.</p>
+            <h2 className="font-display text-4xl leading-tight text-foreground md:text-6xl">Engineering confidence into every connection.</h2>
+            <p className="mt-8 max-w-4xl border-l-4 border-primary pl-6 font-display text-2xl leading-snug text-foreground md:text-3xl">
+              With <span className="text-primary">over a decade of expertise</span>, we are a trusted partner delivering high-quality, reliable, and innovative solutions to major clients across the UAE and beyond.
+            </p>
+            <div className="mt-12 grid gap-6 md:grid-cols-2">
+              <div className="rounded-2xl bg-secondary/50 p-6 md:p-8">
+                <ShieldCheck className="size-7 text-primary" />
+                <h3 className="mt-4 font-display text-xl font-semibold text-foreground">Excellence, safety &amp; sustainability</h3>
+                <p className="mt-3 text-lg leading-8 text-foreground/80">Our commitment drives us to provide cutting-edge power solutions, including <strong className="text-foreground">substation works, cable installations, control systems, relay protection, automation, and renewable energy projects</strong>.</p>
+              </div>
+              <div className="rounded-2xl bg-secondary/50 p-6 md:p-8">
+                <Building2 className="size-7 text-primary" />
+                <h3 className="mt-4 font-display text-xl font-semibold text-foreground">Skilled professionals, highest standards</h3>
+                <p className="mt-3 text-lg leading-8 text-foreground/80">Every project meets the highest industry standards with <strong className="text-foreground">strict regulatory compliance and best practices</strong> — efficient, cost-effective, future-ready solutions for a sustainable tomorrow.</p>
+              </div>
+            </div>
           </div>
-          <aside className="border-l border-primary/40 pl-6 md:mt-16 md:pl-8">
-            <p className="eyebrow">Our commitment</p>
-            <p className="mt-4 font-display text-2xl leading-tight text-foreground">Reliable power infrastructure, carefully delivered and ready for what comes next.</p>
-          </aside>
         </section>
         <section className="mx-auto grid max-w-7xl gap-px border-y border-border bg-border md:grid-cols-3">
           {[
