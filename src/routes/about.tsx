@@ -84,7 +84,7 @@ function AboutPage() {
                 <div key={work} className="rounded-xl border-l-2 border-primary bg-card/50 px-5 py-4"><p className="text-lg text-foreground">{work}</p><p className="mt-1 text-base text-muted-foreground">{client}</p></div>
               ))}
             </div>
-            <p className="mt-6 text-base text-muted-foreground">Other clients include Lindenberg, Danway, Schneider-panel projects for Al Ain Mall, NPC, CCC, Arabtec and more — over 75 completed projects.</p>
+            <p className="mt-6 text-base text-muted-foreground">Other clients include Lindenberg, Danway, Pivot, NPC, CCC, Arabtec, Multiplex and more — over 75 completed projects across the UAE.</p>
           </div>
         </section>
         <section className="mx-auto grid max-w-7xl gap-10 px-6 py-24 md:grid-cols-2">
