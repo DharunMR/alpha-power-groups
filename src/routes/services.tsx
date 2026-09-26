@@ -5,21 +5,27 @@ import { useEffect, useRef, useState } from "react";
 import { PageShell } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";
 import automationImage from "@/assets/service-automation.jpg";
+import backupImage from "@/assets/service-backup.jpg";
 import cablesImage from "@/assets/service-cables.jpg";
+import lightingImage from "@/assets/service-lighting.jpg";
+import meteringImage from "@/assets/service-metering.jpg";
+import panelsImage from "@/assets/service-panels.jpg";
+import relayImage from "@/assets/service-relay.jpg";
 import solarImage from "@/assets/service-solar.jpg";
-import switchgearImage from "@/assets/service-switchgear.jpg";
+import substationImage from "@/assets/service-substation.jpg";
 
 const services = [
-  { number: "01", title: "Power & substation works", copy: "Supply, installation, testing and commissioning of substations, switching stations, package units and transformers.", details: ["33/11kV substations, 11kV switching stations, 11/22kV substations and 11kV package units", "Power and distribution transformers", "11kV & 22kV Ring Main Units (RMU)", "Power and harmonic analysis studies for all types of electrical stations"], image: switchgearImage, alt: "Modern electrical switchgear installation" },
-  { number: "02", title: "Cable works", copy: "Supply, installation, jointing, termination and testing of medium- and low-voltage cables.", details: ["MV and LV cable jointing, termination and testing", "Cable trays and cable duct works", "MV and LV cables in vertical/horizontal cable trays"], image: cablesImage, alt: "Engineers installing high-voltage power cables" },
-  { number: "03", title: "Panels & control systems", copy: "Supply, installation, testing and commissioning of panels, RTU/PLC systems and DC charger panels.", details: ["LV panels", "Feeder pillars, MDB and FDB panels", "RTU/PLC systems", "DC charger panels"], image: automationImage, alt: "Advanced electrical automation control room" },
-  { number: "04", title: "Relay protection & safety", copy: "Protection wiring, settings and safety systems for substations.", details: ["Protection relay wiring and modification works", "Relay setting calculations, protection coordination and EMAT calculations", "Fire alarm & fire detection systems"], image: switchgearImage, alt: "Protected electrical switchgear room" },
-  { number: "05", title: "Energy & smart metering", copy: "Metering systems that make energy consumption visible and accurate.", details: ["AMR (Auto Meter Reading) systems", "Replacement of electromechanical energy meters with electronic meters"], image: automationImage, alt: "Energy monitoring and smart control systems" },
-  { number: "06", title: "Street lighting & infrastructure", copy: "Supply, installation, testing and commissioning of street and camera poles.", details: ["Street light poles", "CCTV camera poles", "Decorative and hybrid light poles (10 & 14 m)"], image: solarImage, alt: "Modern infrastructure and renewable energy installation" },
-  { number: "07", title: "Power backup solutions", copy: "Backup systems that keep essential operations running.", details: ["UPS (Uninterruptible Power Supplies) and batteries", "Diesel generator installation, testing and commissioning"], image: switchgearImage, alt: "Electrical equipment supporting continuous power" },
-  { number: "08", title: "Automation & control wiring", copy: "Control wiring and DMS equipment for modern, remotely managed networks.", details: ["Control and protection wiring modification of MV switchgear for DMS", "Design, supply, installation and commissioning of DMS equipment"], image: automationImage, alt: "SCADA automation control room" },
-  { number: "09", title: "Solar energy solutions", copy: "Solar installations from kW to MW scale, plus ongoing plant care.", details: ["Ground-mounted and rooftop systems (kW to MW scale)", "Installation, testing and commissioning", "Solar power plant operation and maintenance"], image: solarImage, alt: "Solar energy installation in Abu Dhabi" },
+  { number: "01", title: "Power & substation works", copy: "Supply, installation, testing and commissioning of substations, switching stations, package units and transformers.", details: ["33/11kV substations, 11kV switching stations, 11/22kV substations and 11kV package units", "Power and distribution transformers", "11kV & 22kV Ring Main Units (RMU)", "Power and harmonic analysis studies for all types of electrical stations"], image: substationImage, alt: "Electrical substation with power transformers and switchgear" },
+  { number: "02", title: "Cable works", copy: "Supply, installation, jointing, termination and testing of medium- and low-voltage cables.", details: ["MV and LV cable jointing, termination and testing", "Cable trays and cable duct works", "MV and LV cables in vertical/horizontal cable trays"], image: cablesImage, alt: "Medium-voltage power cables jointed and routed in cable trays" },
+  { number: "03", title: "Panels & control systems", copy: "Supply, installation, testing and commissioning of panels, RTU/PLC systems and DC charger panels.", details: ["LV panels", "Feeder pillars, MDB and FDB panels", "RTU/PLC systems", "DC charger panels"], image: panelsImage, alt: "Low-voltage distribution and PLC control panels" },
+  { number: "04", title: "Relay protection & safety", copy: "Protection wiring, settings and safety systems for substations.", details: ["Protection relay wiring and modification works", "Relay setting calculations, protection coordination and EMAT calculations", "Fire alarm & fire detection systems"], image: relayImage, alt: "Substation protection relay panel with secondary wiring" },
+  { number: "05", title: "Energy & smart metering", copy: "Metering systems that make energy consumption visible and accurate.", details: ["AMR (Auto Meter Reading) systems", "Replacement of electromechanical energy meters with electronic meters"], image: meteringImage, alt: "Digital electronic energy meters in a metering cabinet" },
+  { number: "06", title: "Street lighting & infrastructure", copy: "Supply, installation, testing and commissioning of street and camera poles.", details: ["Street light poles", "CCTV camera poles", "Decorative and hybrid light poles (10 & 14 m)"], image: lightingImage, alt: "Street lighting poles and CCTV camera pole along a road" },
+  { number: "07", title: "Power backup solutions", copy: "Backup systems that keep essential operations running.", details: ["UPS (Uninterruptible Power Supplies) and batteries", "Diesel generator installation, testing and commissioning"], image: backupImage, alt: "UPS units, battery banks and a standby diesel generator" },
+  { number: "08", title: "Automation & control wiring", copy: "Control wiring and DMS equipment for modern, remotely managed networks.", details: ["Control and protection wiring modification of MV switchgear for DMS", "Design, supply, installation and commissioning of DMS equipment"], image: automationImage, alt: "SCADA distribution management control room" },
+  { number: "09", title: "Solar energy solutions", copy: "Solar installations from kW to MW scale, plus ongoing plant care.", details: ["Ground-mounted and rooftop systems (kW to MW scale)", "Installation, testing and commissioning", "Solar power plant operation and maintenance"], image: solarImage, alt: "Ground-mounted and rooftop solar panel arrays" },
 ];
+
 
 export const Route = createFileRoute("/services")({
   head: () => ({ meta: [
