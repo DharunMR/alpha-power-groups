@@ -39,9 +39,10 @@ function Index() {
           <div className="ambient ambient-one" /><div className="ambient ambient-two" />
           <div className="relative z-10 mx-auto grid min-h-[calc(94svh-7rem)] max-w-7xl items-center gap-12 px-6 pb-16 md:grid-cols-[1.05fr_0.95fr] md:pb-24">
             <div className="animate-rise">
-              <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-4 py-2 text-xs uppercase tracking-[0.18em] text-primary backdrop-blur-xl"><span className="size-1.5 rounded-full bg-primary" />Abu Dhabi · Power &amp; infrastructure</div>
-              <h1 className="max-w-3xl font-display text-5xl font-semibold leading-[0.98] md:text-7xl">Smart energy management for a <span className="text-primary">sustainable future.</span></h1>
-              <p className="mt-7 max-w-xl text-lg leading-7 text-muted-foreground">Advanced smart metering, automation and control solutions designed for maximum efficiency, reliability and cost savings.</p>
+              <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-4 py-2 text-xs uppercase tracking-[0.18em] text-primary backdrop-blur-xl"><span className="size-1.5 rounded-full bg-primary" />Abu Dhabi · Electro mechanical & Infrastructure Engineering Contracting</div>
+              <h1 className="max-w-3xl font-display text-5xl font-semibold leading-[0.98] md:text-7xl">Engineering confidence into <span className="text-primary">every critical connection.</span></h1>
+              <p className="mt-7 max-w-xl text-lg leading-7 text-muted-foreground">Premier electromechanical engineering and contracting solutions across the UAE — delivering high-voltage substations, cable networks, switchgear, automation, and renewable power. Trusted engineering partner for utilities, oil & gas, and industrial infrastructure — specializing in substation works, power distribution, relay protection, and turnkey commissioning.
+</p>
               <div className="mt-9 flex flex-wrap gap-3"><Button asChild size="lg" className="rounded-xl"><Link to="/services">Explore solutions <ArrowRight /></Link></Button><Button asChild variant="outline" size="lg" className="rounded-xl bg-card/40 backdrop-blur-xl"><Link to="/about">Our approach</Link></Button></div>
               <div className="mt-12 grid max-w-xl grid-cols-2 gap-8 border-t border-border pt-6"><div><p className="font-display text-2xl text-primary">10+ years</p><p className="mt-1 text-sm text-muted-foreground">Engineering experience</p></div><div><p className="font-display text-2xl text-primary">ISO 9001:2015</p><p className="mt-1 text-sm text-muted-foreground">Quality management</p></div></div>
             </div>
