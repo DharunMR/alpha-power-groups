@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowDown, ArrowRight, Cable, Gauge, ShieldCheck, Sun } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
 
 import { PageShell } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";
@@ -20,10 +20,15 @@ export const Route = createFileRoute("/")({
 });
 
 const capabilities = [
-  { icon: Gauge, title: "Power & substations", body: "High-voltage substations, transformers, switchgear and protection systems." },
-  { icon: Cable, title: "Cables & control", body: "HV/LV cable works, control panels, PLC, SCADA and intelligent automation." },
-  { icon: ShieldCheck, title: "Backup & protection", body: "Relay protection, UPS, generators and battery systems for continuous operation." },
-  { icon: Sun, title: "Smart & renewable", body: "Smart metering and solar installations engineered for measurable efficiency." },
+  { number: "01", title: "Power & substation works", body: "Transformers, switchgear, protection, testing and commissioning." },
+  { number: "02", title: "Cable works", body: "HV and LV installation, jointing, termination and cable testing." },
+  { number: "03", title: "Panels & control systems", body: "Distribution panels, motor control centres and integrated monitoring." },
+  { number: "04", title: "Relay protection & safety", body: "Fault, overload and short-circuit protection schemes." },
+  { number: "05", title: "Energy & smart metering", body: "AMR systems, real-time monitoring and energy management." },
+  { number: "06", title: "Street lighting & infrastructure", body: "Lighting design, installation and maintenance support." },
+  { number: "07", title: "Power backup solutions", body: "UPS systems, generators and battery systems." },
+  { number: "08", title: "Automation & control wiring", body: "PLC integration, SCADA systems and control wiring." },
+  { number: "09", title: "Solar energy solutions", body: "System design, solar installation and performance integration." },
 ];
 
 function Index() {
@@ -64,7 +69,22 @@ function Index() {
         </section>
 
         <section id="capabilities" className="border-y border-border bg-secondary/30 py-24">
-          <div className="mx-auto max-w-7xl px-6"><div className="mb-10 flex items-end justify-between gap-6"><div><p className="eyebrow">Integrated expertise</p><h2 className="font-display text-4xl md:text-5xl">What we deliver.</h2></div><Link to="/services" className="hidden items-center gap-2 text-base text-primary md:flex">All nine services <ArrowRight className="size-4" /></Link></div><div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">{capabilities.map(({icon:Icon,title,body}) => <article key={title} className="group rounded-2xl border border-border bg-card/45 p-7 backdrop-blur-xl transition hover:-translate-y-1 hover:bg-card/70"><div className="grid size-11 place-items-center rounded-xl bg-primary/10 text-primary"><Icon className="size-5" /></div><h3 className="mt-8 font-display text-xl">{title}</h3><p className="mt-3 text-base leading-7 text-muted-foreground">{body}</p></article>)}</div></div>
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="mb-12 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+              <div><p className="eyebrow">Integrated expertise</p><h2 className="font-display text-4xl md:text-5xl">Our nine services.</h2><p className="mt-4 max-w-2xl text-lg leading-8 text-muted-foreground">Tap any service to see full details, or browse them all on our services page.</p></div>
+              <Button asChild size="lg" className="h-14 rounded-xl px-7 text-lg shadow-lg"><Link to="/services">View all 9 services <ArrowRight /></Link></Button>
+            </div>
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {capabilities.map(({ number, title, body }) => (
+                <Link key={number} to="/services" hash={`service-${number}`} className="group flex flex-col rounded-2xl border border-border bg-card/45 p-7 backdrop-blur-xl transition hover:-translate-y-1 hover:border-primary/60 hover:bg-card/70">
+                  <div className="flex items-center justify-between"><span className="font-display text-3xl text-primary">{number}</span><span className="grid size-10 place-items-center rounded-full border border-border text-primary transition group-hover:bg-primary group-hover:text-primary-foreground"><ArrowUpRight className="size-5" /></span></div>
+                  <h3 className="mt-6 font-display text-2xl">{title}</h3>
+                  <p className="mt-3 flex-1 text-lg leading-8 text-muted-foreground">{body}</p>
+                  <span className="mt-6 inline-flex w-fit items-center gap-2 rounded-lg bg-primary/10 px-4 py-2 text-base font-medium text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">View details <ArrowRight className="size-4" /></span>
+                </Link>
+              ))}
+            </div>
+          </div>
         </section>
 
         <section className="relative min-h-[650px] overflow-hidden">
