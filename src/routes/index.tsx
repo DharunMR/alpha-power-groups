@@ -71,11 +71,11 @@ function Index() {
         <section id="capabilities" className="border-y border-border bg-secondary/30 py-24">
           <div className="mx-auto max-w-7xl px-6">
             <div className="mb-12 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-              <div><p className="eyebrow">Integrated expertise</p><h2 className="font-display text-4xl md:text-5xl">Our nine services.</h2><p className="mt-4 max-w-2xl text-lg leading-8 text-muted-foreground">Tap any service to see full details, or browse them all on our services page.</p></div>
+              <div><p className="eyebrow">Integrated expertise</p><h2 className="font-display text-4xl md:text-5xl">What we deliver.</h2><p className="mt-4 max-w-2xl text-lg leading-8 text-muted-foreground">A few of our core services. We offer 9 in total.</p></div>
               <Button asChild size="lg" className="h-14 rounded-xl px-7 text-lg shadow-lg"><Link to="/services">View all 9 services <ArrowRight /></Link></Button>
             </div>
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {capabilities.map(({ number, title, body }) => (
+              {capabilities.slice(0, 3).map(({ number, title, body }) => (
                 <Link key={number} to="/services" hash={`service-${number}`} className="group flex flex-col rounded-2xl border border-border bg-card/45 p-7 backdrop-blur-xl transition hover:-translate-y-1 hover:border-primary/60 hover:bg-card/70">
                   <div className="flex items-center justify-between"><span className="font-display text-3xl text-primary">{number}</span><span className="grid size-10 place-items-center rounded-full border border-border text-primary transition group-hover:bg-primary group-hover:text-primary-foreground"><ArrowUpRight className="size-5" /></span></div>
                   <h3 className="mt-6 font-display text-2xl">{title}</h3>
@@ -83,6 +83,10 @@ function Index() {
                   <span className="mt-6 inline-flex w-fit items-center gap-2 rounded-lg bg-primary/10 px-4 py-2 text-base font-medium text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">View details <ArrowRight className="size-4" /></span>
                 </Link>
               ))}
+            </div>
+            <div className="mt-10 flex flex-col items-center gap-4 rounded-2xl border border-primary/30 bg-primary/5 p-8 text-center">
+              <p className="text-xl text-foreground">See 6 more services and full details on our services page.</p>
+              <Button asChild size="lg" className="h-14 rounded-xl px-8 text-lg shadow-lg"><Link to="/services">View more details <ArrowRight /></Link></Button>
             </div>
           </div>
         </section>
