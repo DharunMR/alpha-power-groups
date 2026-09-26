@@ -1,14 +1,18 @@
-# Welcome to your Lovable project
+# Power Hub Navigator
+
+https://github.com/DharunMR/alpha-power-hub
+
+view this repo and in home page those 4 services looks different and people unnotice other 9 service , you need to make the view other nine as button or something people notice and make those 4 similar or make looks connected to service page. Currently all fonts are small in websites for paras. So make all detail fonts bigger and make those redirect as buttons so that people notice. In
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/1dccafce-bf15-4486-8cc0-c4807130e0f2).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +24,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
