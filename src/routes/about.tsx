@@ -62,6 +62,35 @@ function AboutPage() {
           </div>
           <Button asChild className="mt-10 rounded-xl"><Link to="/services">Explore our services</Link></Button>
         </section>
+        <section className="border-y border-border bg-secondary/30 py-24">
+          <div className="mx-auto max-w-7xl px-6">
+            <p className="eyebrow">Key achievements</p>
+            <h2 className="mt-3 font-display text-4xl md:text-5xl">Trusted on major UAE projects.</h2>
+            <ul className="mt-8 grid gap-4 text-lg leading-8 text-muted-foreground md:grid-cols-3">
+              <li className="rounded-2xl border border-border bg-card/50 p-6">Approved sub-contractor for Siemens for their DMS projects across Abu Dhabi and Al Ain.</li>
+              <li className="rounded-2xl border border-border bg-card/50 p-6">Successfully completed projects for leading government entities and private corporations.</li>
+              <li className="rounded-2xl border border-border bg-card/50 p-6">Recognized for on-time delivery and adherence to international quality standards.</li>
+            </ul>
+            <h3 className="mt-16 font-display text-2xl">Selected projects</h3>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {[
+                ["DMS adaptation & RTU installation, testing and commissioning", "Siemens · Abu Dhabi & Al Ain substations"],
+                ["22kV switchgear, transformers & 48V DC systems", "TCAJV · New Abu Dhabi International Airport (MTB)"],
+                ["Testing & commissioning of 22kV substations and cable works", "Thermo · Masdar Institute, Abu Dhabi"],
+                ["Jointing, termination and testing of 22kV cables", "Drake & Scull · Ruwais Housing Complex (ADNOC)"],
+                ["Complete installation of 33/11kV primary substation", "Al Jaber · Shahama & Madinat Zayed"],
+                ["Street lighting poles, lights and cabling works", "Tyco · Sweihan Solar Project"],
+              ].map(([work, client]) => (
+                <div key={work} className="rounded-xl border-l-2 border-primary bg-card/50 px-5 py-4"><p className="text-lg text-foreground">{work}</p><p className="mt-1 text-base text-muted-foreground">{client}</p></div>
+              ))}
+            </div>
+            <p className="mt-6 text-base text-muted-foreground">Other clients include Lindenberg, Danway, Schneider-panel projects for Al Ain Mall, NPC, CCC, Arabtec and more — over 75 completed projects.</p>
+          </div>
+        </section>
+        <section className="mx-auto grid max-w-7xl gap-10 px-6 py-24 md:grid-cols-2">
+          <div><p className="eyebrow">Quality policy</p><h2 className="mt-3 font-display text-3xl">ISO 9001:2015 certified quality.</h2><p className="mt-4 text-muted-foreground">We integrate sound quality management into every activity, built on customer value, process focus, continual improvement (Plan-Do-Check-Act), leadership, motivation and long-term partnership.</p></div>
+          <div><p className="eyebrow">Health, safety &amp; environment</p><h2 className="mt-3 font-display text-3xl">All accidents are preventable.</h2><p className="mt-4 text-muted-foreground">No task is so important that injury to people or damage to the environment is justified. We comply with all applicable HSE legislation, control hazards, train our people and work only with contractors who share our standards.</p></div>
+        </section>
       </main>
     </PageShell>
   );
