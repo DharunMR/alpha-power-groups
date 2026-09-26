@@ -84,10 +84,7 @@ function Index() {
                 </Link>
               ))}
             </div>
-            <div className="mt-10 flex flex-col items-center gap-4 rounded-2xl border border-primary/30 bg-primary/5 p-8 text-center">
-              <p className="text-xl text-foreground">See 6 more services and full details on our services page.</p>
-              <Button asChild size="lg" className="h-14 rounded-xl px-8 text-lg shadow-lg"><Link to="/services">View more details <ArrowRight /></Link></Button>
-            </div>
+            <p className="mt-8 text-center text-base text-muted-foreground">+ 6 more services — <Link to="/services" className="font-medium text-primary underline underline-offset-4 hover:no-underline">see details</Link></p>
           </div>
         </section>
 
