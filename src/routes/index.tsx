@@ -20,9 +20,9 @@ export const Route = createFileRoute("/")({
 });
 
 const capabilities = [
-  { number: "01", title: "Power & substation works", body: "Transformers, switchgear, protection, testing and commissioning." },
-  { number: "02", title: "Cable works", body: "HV and LV installation, jointing, termination and cable testing." },
-  { number: "03", title: "Panels & control systems", body: "Distribution panels, motor control centres and integrated monitoring." },
+  { number: "01", title: "Power & substation works", body: "Substations, switching stations, transformers and 11/22kV Ring Main Units." },
+  { number: "02", title: "Cable works", body: "MV and LV cable installation, jointing, termination and testing." },
+  { number: "03", title: "Panels & control systems", body: "LV panels, feeder pillars, MDB/FDB panels, RTU/PLC and DC chargers." },
   { number: "04", title: "Relay protection & safety", body: "Fault, overload and short-circuit protection schemes." },
   { number: "05", title: "Energy & smart metering", body: "AMR systems, real-time monitoring and energy management." },
   { number: "06", title: "Street lighting & infrastructure", body: "Lighting design, installation and maintenance support." },

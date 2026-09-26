@@ -78,7 +78,7 @@ export function SiteFooter() {
         </div>
         <div className="space-y-3 text-base text-muted-foreground">
           <p className="font-display font-medium text-foreground">Abu Dhabi office</p>
-          <p className="flex items-start gap-2"><MapPin className="mt-0.5 size-4 shrink-0" />Building C9, Mezzanine Floor, Office 7, Shabiya 12, Abu Dhabi, UAE</p>
+          <p className="flex items-start gap-2"><MapPin className="mt-0.5 size-4 shrink-0" />Office 7, Mezzanine Floor, Shabia ME12, Abu Dhabi, UAE</p>
         </div>
       </div>
       <div className="border-t border-border px-6 py-5 text-center text-sm text-muted-foreground">© 2026 Alpha Power Electromechanical Contracting LLC</div>
