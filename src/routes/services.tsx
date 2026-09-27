@@ -92,13 +92,13 @@ function ServicesPage() {
           <p>Our teams handle supply, installation, testing and commissioning across the complete electrical infrastructure lifecycle.</p>
         </section>
 
-        <section aria-label="What we deliver" className="mx-auto grid max-w-7xl gap-3 px-6 pb-14 sm:grid-cols-3">
+        <section aria-label="What we deliver" className="mx-auto flex max-w-7xl snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-14 [scrollbar-width:none] sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-6">
           {[
             { title: "Supply to commissioning", copy: "One accountable team across the full delivery lifecycle." },
             { title: "HV, LV & controls", copy: "Substations, cable networks, panels and automation under one roof." },
             { title: "Abu Dhabi based", copy: "Local teams supporting sites across the UAE." },
           ].map((item) => (
-            <div key={item.title} className="rounded-3xl border border-border/70 bg-secondary/40 p-6">
+            <div key={item.title} className="w-[78%] shrink-0 snap-start rounded-3xl border border-border/70 bg-secondary/40 p-5 sm:w-auto sm:p-6">
               <p className="font-display text-base font-semibold text-foreground">{item.title}</p>
               <p className="mt-2 text-base leading-7 text-muted-foreground">{item.copy}</p>
             </div>
@@ -106,7 +106,7 @@ function ServicesPage() {
         </section>
 
         <nav aria-label="Service index" className="sticky top-20 z-30 mx-auto max-w-7xl px-4 pb-14 sm:px-6">
-          <div className="grid gap-1 rounded-3xl border border-border/70 bg-background/80 p-2 shadow-xl backdrop-blur-2xl sm:grid-cols-3 lg:grid-cols-9">
+          <div className="flex gap-1 overflow-x-auto rounded-3xl border border-border/70 bg-background/80 p-2 shadow-xl backdrop-blur-2xl [scrollbar-width:none] sm:grid sm:grid-cols-3 lg:grid-cols-9">
             {services.map((service) => (
               <a
                 key={service.number}
@@ -127,10 +127,10 @@ function ServicesPage() {
                     setActive(service.number);
                   }, 1400);
                 }}
-                className={`grid min-w-0 grid-cols-[auto_minmax(0,1fr)] items-center gap-3 rounded-2xl px-3 py-3 text-sm transition-colors sm:grid-cols-1 lg:items-start ${active === service.number ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-secondary"}`}
+                className={`flex shrink-0 items-center gap-2 whitespace-nowrap sm:grid sm:min-w-0 sm:shrink sm:gap-3 sm:whitespace-normal rounded-2xl px-3 py-3 text-sm transition-colors sm:grid-cols-1 lg:items-start ${active === service.number ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-secondary"}`}
               >
                 <span className={`shrink-0 font-medium ${active === service.number ? "text-primary-foreground" : "text-primary"}`}>{service.number}</span>
-                <span className="truncate lg:whitespace-normal">{service.title}</span>
+                <span className="sm:truncate lg:whitespace-normal">{service.title}</span>
               </a>
             ))}
           </div>

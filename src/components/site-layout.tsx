@@ -69,22 +69,26 @@ export function SiteHeader() {
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-background">
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-12 md:grid-cols-[1.4fr_1fr_1fr]">
+      <div className="mx-auto grid max-w-7xl gap-5 px-5 py-8 md:grid-cols-[1.4fr_1fr_1fr] md:gap-10 md:px-6 md:py-12">
         <div>
           <div className="flex items-center gap-3"><BrandMark /><span className="font-display font-semibold">Alpha Power</span></div>
-          <p className="mt-4 max-w-md text-base leading-7 text-muted-foreground">Power and electrical solutions for critical infrastructure across the UAE.</p>
+          <p className="mt-3 max-w-md text-sm leading-6 text-muted-foreground md:mt-4 md:text-base md:leading-7">Power and electrical solutions for critical infrastructure across the UAE.</p>
         </div>
-        <div className="space-y-3 text-base text-muted-foreground">
-          <p className="font-display font-medium text-foreground">Connect</p>
-          <a href="tel:+97126797215" className="flex items-center gap-2 hover:text-primary"><Phone className="size-4" />+971 2 679 7215</a>
-          <a href="mailto:mail@alphapowergroups.com" className="flex items-center gap-2 hover:text-primary"><Mail className="size-4" />mail@alphapowergroups.com</a>
+        <div className="grid grid-cols-2 gap-2 md:contents">
+          <a href="tel:+97126797215" className="flex items-center justify-center gap-2 rounded-xl border border-border px-3 py-2.5 text-sm text-foreground md:hidden"><Phone className="size-4 text-primary" />Call us</a>
+          <a href="mailto:mail@alphapowergroups.com" className="flex items-center justify-center gap-2 rounded-xl border border-border px-3 py-2.5 text-sm text-foreground md:hidden"><Mail className="size-4 text-primary" />Email us</a>
+          <div className="hidden space-y-3 text-base text-muted-foreground md:block">
+            <p className="font-display font-medium text-foreground">Connect</p>
+            <a href="tel:+97126797215" className="flex items-center gap-2 hover:text-primary"><Phone className="size-4" />+971 2 679 7215</a>
+            <a href="mailto:mail@alphapowergroups.com" className="flex items-center gap-2 hover:text-primary"><Mail className="size-4" />mail@alphapowergroups.com</a>
+          </div>
         </div>
-        <div className="space-y-3 text-base text-muted-foreground">
-          <p className="font-display font-medium text-foreground">Abu Dhabi office</p>
-          <p className="flex items-start gap-2"><MapPin className="mt-0.5 size-4 shrink-0" />Office 7, Mezzanine Floor, Shabia ME12, Abu Dhabi, UAE</p>
+        <div className="text-sm text-muted-foreground md:space-y-3 md:text-base">
+          <p className="hidden font-display font-medium text-foreground md:block">Abu Dhabi office</p>
+          <p className="flex items-start gap-2 text-sm leading-6 md:text-base"><MapPin className="mt-1 size-4 shrink-0" />Office 7, Mezzanine Floor, Shabia ME12, Abu Dhabi, UAE</p>
         </div>
       </div>
-      <div className="border-t border-border px-6 py-5 text-center text-sm text-muted-foreground">© 2026 Alpha Power Electromechanical Contracting LLC</div>
+      <div className="border-t border-border px-5 py-4 text-center text-xs text-muted-foreground md:py-5 md:text-sm">© 2026 Alpha Power Electromechanical Contracting LLC</div>
     </footer>
   );
 }
