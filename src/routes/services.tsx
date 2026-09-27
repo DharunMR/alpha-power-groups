@@ -106,7 +106,7 @@ function ServicesPage() {
         </section>
 
         <nav aria-label="Service index" className="sticky top-20 z-30 mx-auto max-w-7xl px-4 pb-14 sm:px-6">
-          <div className="grid gap-1 rounded-3xl border border-border/70 bg-background/80 p-2 shadow-xl backdrop-blur-2xl sm:grid-cols-3 lg:grid-cols-9">
+          <div className="flex gap-1 overflow-x-auto rounded-3xl border border-border/70 bg-background/80 p-2 shadow-xl backdrop-blur-2xl sm:grid sm:grid-cols-3 sm:overflow-visible lg:grid-cols-9">
             {services.map((service) => (
               <a
                 key={service.number}
@@ -127,10 +127,10 @@ function ServicesPage() {
                     setActive(service.number);
                   }, 1400);
                 }}
-                className={`grid min-w-0 grid-cols-[auto_minmax(0,1fr)] items-center gap-3 rounded-2xl px-3 py-3 text-sm transition-colors sm:grid-cols-1 lg:items-start ${active === service.number ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-secondary"}`}
+                className={`grid min-w-0 shrink-0 grid-cols-[auto_minmax(0,1fr)] items-center gap-3 rounded-2xl px-3 py-3 text-sm transition-colors sm:grid-cols-1 lg:items-start ${active === service.number ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-secondary"}`}
               >
                 <span className={`shrink-0 font-medium ${active === service.number ? "text-primary-foreground" : "text-primary"}`}>{service.number}</span>
-                <span className="truncate lg:whitespace-normal">{service.title}</span>
+                <span className="truncate whitespace-nowrap lg:whitespace-normal">{service.title}</span>
               </a>
             ))}
           </div>
