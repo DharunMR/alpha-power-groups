@@ -23,13 +23,13 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-4 py-4 md:px-6">
-      <div className="mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-border/70 bg-background/70 px-4 py-3 shadow-2xl backdrop-blur-2xl md:px-6">
-        <Link to="/" className="flex items-center gap-3" aria-label="Alpha Power home">
+    <header className="fixed inset-x-0 top-0 z-50 px-3 py-3 md:px-6 md:py-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 rounded-2xl border border-border/70 bg-background/80 px-3 py-2.5 md:px-4 md:py-3 shadow-2xl backdrop-blur-2xl md:px-6">
+        <Link to="/" className="flex min-w-0 items-center gap-2.5 md:gap-3" aria-label="Alpha Power home">
           <BrandMark />
-          <span className="leading-tight">
+          <span className="min-w-0 leading-tight">
             <span className="block font-display text-base font-semibold text-foreground">Alpha Power</span>
-            <span className="block text-[11px] uppercase tracking-[0.2em] text-muted-foreground">Electromechanical Contracting</span>
+            <span className="hidden text-[11px] uppercase sm:block tracking-[0.2em] text-muted-foreground">Electromechanical Contracting</span>
           </span>
         </Link>
         <nav className="hidden items-center gap-7 text-base text-muted-foreground md:flex" aria-label="Main navigation">
@@ -39,8 +39,8 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-2">
-          <Button asChild className="rounded-xl px-4 text-sm sm:px-5 sm:text-base">
+        <div className="flex shrink-0 items-center gap-2">
+          <Button asChild className="hidden rounded-xl px-5 text-base sm:inline-flex">
             <a href="/Alpha-Power-Company-Profile.pdf" target="_blank" rel="noreferrer">
               Company Profile
             </a>
@@ -57,6 +57,9 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
+          <Button asChild className="mt-2 h-12 rounded-xl text-base">
+            <a href="/Alpha-Power-Company-Profile.pdf" target="_blank" rel="noreferrer">Company Profile</a>
+          </Button>
         </nav>
       )}
     </header>
