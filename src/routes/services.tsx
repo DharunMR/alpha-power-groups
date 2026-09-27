@@ -136,43 +136,36 @@ function ServicesPage() {
           </div>
         </nav>
 
-        <section className="border-t border-border px-6 py-12 sm:py-16">
-          <div className="mx-auto flex max-w-7xl flex-col gap-16 sm:gap-24 lg:gap-32">
+        <section className="border-t border-border px-5 py-10 sm:px-6 sm:py-16">
+          <div className="mx-auto flex max-w-7xl flex-col gap-10 sm:gap-24 lg:gap-32">
           {services.map((service, index) => {
             const imageFirst = index % 2 === 0;
             return (
               <article id={`service-${service.number}`} key={service.number} data-service-number={service.number} className="scroll-mt-44">
-                  <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-2 lg:gap-16">
-                  <div className={`relative ${imageFirst ? "lg:order-1" : "lg:order-2"}`}>
-                    <div
-                      aria-hidden
-                      className={`absolute -inset-3 rounded-[2.5rem] border border-primary/15 sm:-inset-5 ${imageFirst ? "translate-x-4 translate-y-4" : "-translate-x-4 translate-y-4"}`}
-                    />
-                    <div className="group relative aspect-[4/3] overflow-hidden rounded-[2rem] shadow-2xl ring-1 ring-border">
+                  <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] items-center gap-x-4 gap-y-4 sm:gap-x-8 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6">
+                  <div className={`relative lg:row-span-2 lg:row-start-1 ${imageFirst ? "lg:col-start-1" : "lg:col-start-2"}`}>
+                    <div className="group relative aspect-square overflow-hidden rounded-2xl shadow-xl ring-1 ring-border sm:aspect-[4/3] lg:rounded-[2rem]">
                       <img src={service.image} width={1408} height={960} loading="lazy" alt={service.alt} className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.05]" />
-                      <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
-                      <span className="absolute bottom-4 left-4 inline-flex items-center rounded-full border border-primary-foreground/25 bg-background/70 px-3 py-1 font-display text-sm font-semibold text-primary-foreground backdrop-blur-md">
-                        {service.number}
-                      </span>
+                      <span className="absolute bottom-2 left-2 inline-flex items-center rounded-full bg-background/80 px-2.5 py-0.5 font-display text-xs font-semibold text-primary backdrop-blur-md sm:bottom-4 sm:left-4 sm:text-sm">{service.number}</span>
                     </div>
                   </div>
-                  <div className={`flex items-center px-1 sm:px-4 lg:px-0 ${imageFirst ? "lg:order-2" : "lg:order-1"}`}>
-                    <div className="max-w-lg">
-                      <span className="font-display text-6xl font-semibold text-accent/70 sm:text-7xl">{service.number}</span>
-                      <h2 className="mt-6 font-display text-3xl font-semibold leading-tight sm:text-4xl">{service.title}</h2>
-                      <p className="mt-5 text-lg leading-7 text-muted-foreground">{service.copy}</p>
-                      <ul className="mt-8 flex flex-wrap gap-2">
-                        {service.details.map((detail) => (
-                          <li key={detail} className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-4 py-1.5 text-base text-foreground">
-                            <Check className="size-3.5 shrink-0 text-primary" />
-                            {detail}
-                          </li>
-                        ))}
-                      </ul>
-                      <Link to="/contact" className="mt-9 inline-flex items-center gap-2 border-b border-primary pb-1 text-base font-medium text-primary transition-colors hover:text-foreground">
-                        Discuss this service <ArrowRight className="size-4" />
-                      </Link>
-                    </div>
+                  <div className={`min-w-0 lg:self-end ${imageFirst ? "lg:col-start-2" : "lg:col-start-1"}`}>
+                    <span className="font-display text-2xl font-semibold text-accent/70 sm:text-5xl lg:text-7xl">{service.number}</span>
+                    <h2 className="mt-1 font-display text-lg font-semibold leading-tight sm:mt-4 sm:text-3xl lg:text-4xl">{service.title}</h2>
+                    <p className="mt-2 text-sm leading-6 text-muted-foreground sm:mt-4 sm:text-lg sm:leading-7">{service.copy}</p>
+                  </div>
+                  <div className={`col-span-2 lg:col-span-1 lg:self-start ${imageFirst ? "lg:col-start-2" : "lg:col-start-1"}`}>
+                    <ul className="flex flex-wrap gap-1.5 sm:gap-2">
+                      {service.details.map((detail) => (
+                        <li key={detail} className="inline-flex items-center gap-1.5 rounded-full border border-border bg-secondary/50 px-3 py-1 text-xs text-foreground sm:px-4 sm:py-1.5 sm:text-base">
+                          <Check className="size-3 shrink-0 text-primary" />
+                          {detail}
+                        </li>
+                      ))}
+                    </ul>
+                    <Link to="/contact" className="mt-4 inline-flex items-center gap-2 border-b border-primary pb-1 text-sm font-medium text-primary transition-colors hover:text-foreground sm:mt-8 sm:text-base">
+                      Discuss this service <ArrowRight className="size-4" />
+                    </Link>
                   </div>
                 </div>
               </article>
