@@ -35,26 +35,26 @@ function Index() {
   return (
     <PageShell>
       <main>
-        <section className="relative min-h-[94svh] overflow-hidden pt-24 md:pt-28">
+        <section className="relative min-h-[94svh] overflow-hidden pt-28">
           <div className="ambient ambient-one" /><div className="ambient ambient-two" />
-          <div className="relative z-10 mx-auto grid min-h-[calc(94svh-7rem)] max-w-7xl items-center gap-12 px-5 pb-16 md:px-6 md:grid-cols-[1.05fr_0.95fr] md:pb-24">
+          <div className="relative z-10 mx-auto grid min-h-[calc(94svh-7rem)] max-w-7xl items-center gap-12 px-6 pb-16 md:grid-cols-[1.05fr_0.95fr] md:pb-24">
             <div className="animate-rise">
-              <div className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-border bg-card/50 px-3.5 py-1.5 text-[10px] uppercase tracking-[0.14em] md:mb-7 md:px-4 md:py-2 md:text-xs md:tracking-[0.18em] text-primary backdrop-blur-xl"><span className="size-1.5 shrink-0 rounded-full bg-primary" /><span className="md:hidden">Abu Dhabi · Engineering Contracting</span><span className="hidden md:inline">Abu Dhabi · Electro mechanical & Infrastructure Engineering Contracting</span></div>
-              <h1 className="max-w-3xl font-display text-[2.6rem] font-semibold leading-[1.02] sm:text-5xl md:text-7xl md:leading-[0.98]">Engineering confidence into <span className="text-primary">every critical connection.</span></h1>
-              <p className="mt-6 max-w-xl text-base leading-7 md:mt-7 md:text-lg text-muted-foreground">Premier electromechanical engineering and contracting solutions across the UAE — delivering high-voltage substations, cable networks, switchgear, automation, and renewable power. Trusted engineering partner for utilities, oil & gas, and industrial infrastructure — specializing in substation works, power distribution, relay protection, and turnkey commissioning.
+              <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-4 py-2 text-xs uppercase tracking-[0.18em] text-primary backdrop-blur-xl"><span className="size-1.5 rounded-full bg-primary" />Abu Dhabi · Electro mechanical & Infrastructure Engineering Contracting</div>
+              <h1 className="max-w-3xl font-display text-5xl font-semibold leading-[0.98] md:text-7xl">Engineering confidence into <span className="text-primary">every critical connection.</span></h1>
+              <p className="mt-7 max-w-xl text-lg leading-7 text-muted-foreground">Premier electromechanical engineering and contracting solutions across the UAE — delivering high-voltage substations, cable networks, switchgear, automation, and renewable power. Trusted engineering partner for utilities, oil & gas, and industrial infrastructure — specializing in substation works, power distribution, relay protection, and turnkey commissioning.
 </p>
-              <div className="mt-8 grid gap-3 sm:flex sm:flex-wrap md:mt-9"><Button asChild size="lg" className="h-12 rounded-xl text-base"><Link to="/services">Explore solutions <ArrowRight /></Link></Button><Button asChild variant="outline" size="lg" className="h-12 rounded-xl bg-card/40 text-base backdrop-blur-xl"><Link to="/about">Our approach</Link></Button></div>
-              <div className="mt-10 grid max-w-xl grid-cols-2 gap-4 border-t md:mt-12 md:gap-8 border-border pt-6"><div><p className="font-display text-xl text-primary md:text-2xl">10+ years</p><p className="mt-1 text-sm text-muted-foreground">Engineering experience</p></div><div><p className="font-display text-xl text-primary md:text-2xl">ISO 9001:2015</p><p className="mt-1 text-sm text-muted-foreground">Quality management</p></div></div>
+              <div className="mt-9 flex flex-wrap gap-3"><Button asChild size="lg" className="rounded-xl"><Link to="/services">Explore solutions <ArrowRight /></Link></Button><Button asChild variant="outline" size="lg" className="rounded-xl bg-card/40 backdrop-blur-xl"><Link to="/about">Our approach</Link></Button></div>
+              <div className="mt-12 grid max-w-xl grid-cols-2 gap-8 border-t border-border pt-6"><div><p className="font-display text-2xl text-primary">10+ years</p><p className="mt-1 text-sm text-muted-foreground">Engineering experience</p></div><div><p className="font-display text-2xl text-primary">ISO 9001:2015</p><p className="mt-1 text-sm text-muted-foreground">Quality management</p></div></div>
             </div>
             <div className="relative mx-auto w-full max-w-lg animate-rise-delayed">
               <div className="absolute -inset-5 rounded-[2rem] bg-primary/10 blur-3xl" />
               <div className="hero-motion-glow absolute -inset-5 rounded-[2rem] bg-primary/20 blur-3xl" />
-              <div className="relative aspect-[4/5] w-full max-md:aspect-[4/3] overflow-hidden rounded-[1.75rem] border border-border shadow-2xl">
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.75rem] border border-border shadow-2xl">
                 <video
                   src={abuDhabiEnergyVideo}
                   poster={heroImage}
                   aria-label="Abu Dhabi skyline and electrical power infrastructure"
-                  className="h-full w-full object-cover"
+                  className="aspect-[4/5] h-full w-full object-cover"
                   autoPlay
                   muted
                   loop
@@ -63,21 +63,21 @@ function Index() {
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
               </div>
-              <div className="relative mx-3 -mt-10 rounded-2xl border border-border bg-card/90 p-5 md:absolute md:-bottom-6 md:mx-0 md:mt-0 md:max-w-64 md:bg-card/75 shadow-2xl backdrop-blur-2xl md:-left-8"><p className="text-xs uppercase tracking-[0.16em] text-primary">Engineering confidence</p><p className="mt-2 font-display text-xl">Approved Siemens subcontractor</p><p className="mt-1 text-sm leading-5 text-muted-foreground">Supporting DMS projects across Abu Dhabi and Al Ain.</p></div>
+              <div className="absolute -bottom-6 -left-3 max-w-64 rounded-2xl border border-border bg-card/75 p-5 shadow-2xl backdrop-blur-2xl md:-left-8"><p className="text-xs uppercase tracking-[0.16em] text-primary">Engineering confidence</p><p className="mt-2 font-display text-xl">Approved Siemens subcontractor</p><p className="mt-1 text-sm leading-5 text-muted-foreground">Supporting DMS projects across Abu Dhabi and Al Ain.</p></div>
             </div>
             <a href="#capabilities" aria-label="Scroll to capabilities" className="absolute bottom-7 left-1/2 hidden -translate-x-1/2 text-muted-foreground md:block"><ArrowDown className="size-5 animate-bounce" /></a>
           </div>
         </section>
 
-        <section id="capabilities" className="border-y border-border bg-secondary/30 py-16 md:py-24">
-          <div className="mx-auto max-w-7xl px-5 md:px-6">
+        <section id="capabilities" className="border-y border-border bg-secondary/30 py-24">
+          <div className="mx-auto max-w-7xl px-6">
             <div className="mb-12 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
               <div><p className="eyebrow">Integrated expertise</p><h2 className="font-display text-4xl md:text-5xl">What we deliver.</h2><p className="mt-4 max-w-2xl text-lg leading-8 text-muted-foreground">A few of our core services. We offer 9 in total.</p></div>
-              <Button asChild size="lg" className="h-14 w-full rounded-xl px-7 text-lg shadow-lg sm:w-auto"><Link to="/services">View all 9 services <ArrowRight /></Link></Button>
+              <Button asChild size="lg" className="h-14 rounded-xl px-7 text-lg shadow-lg"><Link to="/services">View all 9 services <ArrowRight /></Link></Button>
             </div>
-            <div className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 [scrollbar-width:none] md:mx-0 md:grid md:grid-cols-2 md:gap-5 md:overflow-visible md:px-0 lg:grid-cols-3">
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {capabilities.slice(0, 3).map(({ number, title, body }) => (
-                <Link key={number} to="/services" hash={`service-${number}`} className="group flex w-[82%] shrink-0 snap-start flex-col rounded-2xl md:w-auto border border-border bg-card/45 p-6 md:p-7 backdrop-blur-xl transition hover:-translate-y-1 hover:border-primary/60 hover:bg-card/70">
+                <Link key={number} to="/services" hash={`service-${number}`} className="group flex flex-col rounded-2xl border border-border bg-card/45 p-7 backdrop-blur-xl transition hover:-translate-y-1 hover:border-primary/60 hover:bg-card/70">
                   <div className="flex items-center justify-between"><span className="font-display text-3xl text-primary">{number}</span><span className="grid size-10 place-items-center rounded-full border border-border text-primary transition group-hover:bg-primary group-hover:text-primary-foreground"><ArrowUpRight className="size-5" /></span></div>
                   <h3 className="mt-6 font-display text-2xl">{title}</h3>
                   <p className="mt-3 flex-1 text-lg leading-8 text-muted-foreground">{body}</p>
@@ -92,10 +92,10 @@ function Index() {
         <section className="relative min-h-[650px] overflow-hidden">
           <img src={infrastructureImage} width={1600} height={912} loading="lazy" alt="Electrical transmission and substation infrastructure at dusk" className="absolute inset-0 h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/15" />
-          <div className="relative mx-auto flex min-h-[650px] max-w-7xl items-center px-5 py-16 md:px-6 md:py-24"><div className="max-w-2xl"><p className="eyebrow">Built for demanding environments</p><h2 className="font-display text-4xl leading-tight md:text-6xl">One engineering partner. Every critical connection.</h2><p className="mt-6 max-w-xl leading-7 text-muted-foreground">From 33/11kV substations and transmission systems to energy monitoring and solar installations, Alpha Power delivers safe, tested and commissioned solutions.</p><div className="mt-9 grid grid-cols-3 gap-2 sm:gap-5">{["Power","Oil & Gas","Industrial"].map((sector) => <div key={sector} className="rounded-xl border border-border bg-card/55 px-3 py-3 text-sm sm:px-5 sm:py-4 sm:text-base backdrop-blur-xl"><span className="text-primary">◆</span><p className="mt-2 font-display">{sector}</p></div>)}</div></div></div>
+          <div className="relative mx-auto flex min-h-[650px] max-w-7xl items-center px-6 py-24"><div className="max-w-2xl"><p className="eyebrow">Built for demanding environments</p><h2 className="font-display text-4xl leading-tight md:text-6xl">One engineering partner. Every critical connection.</h2><p className="mt-6 max-w-xl leading-7 text-muted-foreground">From 33/11kV substations and transmission systems to energy monitoring and solar installations, Alpha Power delivers safe, tested and commissioned solutions.</p><div className="mt-9 grid gap-5 sm:grid-cols-3">{["Power","Oil & Gas","Industrial"].map((sector) => <div key={sector} className="rounded-xl border border-border bg-card/55 px-5 py-4 text-base backdrop-blur-xl"><span className="text-primary">◆</span><p className="mt-2 font-display">{sector}</p></div>)}</div></div></div>
         </section>
 
-        <section className="bg-primary text-primary-foreground"><div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-5 py-16 md:flex-row md:px-6 md:py-20 md:items-end"><div><p className="text-sm uppercase tracking-[0.18em] opacity-70">Ready to move forward?</p><h2 className="mt-4 max-w-3xl font-display text-4xl md:text-5xl">Bring clarity, control and resilience to your next project.</h2></div><Button asChild variant="secondary" size="lg" className="h-12 w-full rounded-xl text-base sm:w-auto"><Link to="/contact">Talk to our team <ArrowRight /></Link></Button></div></section>
+        <section className="bg-primary text-primary-foreground"><div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 py-20 md:flex-row md:items-end"><div><p className="text-sm uppercase tracking-[0.18em] opacity-70">Ready to move forward?</p><h2 className="mt-4 max-w-3xl font-display text-4xl md:text-5xl">Bring clarity, control and resilience to your next project.</h2></div><Button asChild variant="secondary" size="lg" className="rounded-xl"><Link to="/contact">Talk to our team <ArrowRight /></Link></Button></div></section>
       </main>
     </PageShell>
   );

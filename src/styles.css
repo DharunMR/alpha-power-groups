@@ -159,9 +159,8 @@
 @utility page-intro {
   margin-inline: auto;
   max-width: 80rem;
-  padding: 8rem 1.25rem 4rem;
-  @media (min-width: 768px) { padding: 10rem 1.5rem 6rem; }
-  & h1 { max-width: 17ch; font-family: var(--font-display); font-size: clamp(2rem, 7vw, 6rem); font-weight: 600; line-height: 0.98; }
+  padding: 10rem 1.5rem 6rem;
+  & h1 { max-width: 17ch; font-family: var(--font-display); font-size: clamp(2.75rem, 7vw, 6rem); font-weight: 600; line-height: 0.98; }
   & > p:last-child { margin-top: 1.5rem; max-width: 44rem; color: var(--muted-foreground); line-height: 1.75; }
 }
 

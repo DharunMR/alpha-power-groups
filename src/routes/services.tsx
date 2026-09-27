@@ -92,13 +92,13 @@ function ServicesPage() {
           <p>Our teams handle supply, installation, testing and commissioning across the complete electrical infrastructure lifecycle.</p>
         </section>
 
-        <section aria-label="What we deliver" className="mx-auto flex max-w-7xl snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-14 [scrollbar-width:none] sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-6">
+        <section aria-label="What we deliver" className="mx-auto grid max-w-7xl gap-3 px-6 pb-14 sm:grid-cols-3">
           {[
             { title: "Supply to commissioning", copy: "One accountable team across the full delivery lifecycle." },
             { title: "HV, LV & controls", copy: "Substations, cable networks, panels and automation under one roof." },
             { title: "Abu Dhabi based", copy: "Local teams supporting sites across the UAE." },
           ].map((item) => (
-            <div key={item.title} className="w-[78%] shrink-0 snap-start rounded-3xl border border-border/70 bg-secondary/40 p-5 sm:w-auto sm:p-6">
+            <div key={item.title} className="rounded-3xl border border-border/70 bg-secondary/40 p-6">
               <p className="font-display text-base font-semibold text-foreground">{item.title}</p>
               <p className="mt-2 text-base leading-7 text-muted-foreground">{item.copy}</p>
             </div>
@@ -106,7 +106,7 @@ function ServicesPage() {
         </section>
 
         <nav aria-label="Service index" className="sticky top-20 z-30 mx-auto max-w-7xl px-4 pb-14 sm:px-6">
-          <div className="flex gap-1 overflow-x-auto rounded-3xl border border-border/70 bg-background/80 p-2 shadow-xl backdrop-blur-2xl [scrollbar-width:none] sm:grid sm:grid-cols-3 lg:grid-cols-9">
+          <div className="flex gap-1 overflow-x-auto rounded-3xl border border-border/70 bg-background/80 p-2 shadow-xl backdrop-blur-2xl sm:grid sm:grid-cols-3 sm:overflow-visible lg:grid-cols-9">
             {services.map((service) => (
               <a
                 key={service.number}
@@ -127,45 +127,52 @@ function ServicesPage() {
                     setActive(service.number);
                   }, 1400);
                 }}
-                className={`flex shrink-0 items-center gap-2 whitespace-nowrap sm:grid sm:min-w-0 sm:shrink sm:gap-3 sm:whitespace-normal rounded-2xl px-3 py-3 text-sm transition-colors sm:grid-cols-1 lg:items-start ${active === service.number ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-secondary"}`}
+                className={`grid min-w-0 shrink-0 grid-cols-[auto_minmax(0,1fr)] items-center gap-3 rounded-2xl px-3 py-3 text-sm transition-colors sm:grid-cols-1 lg:items-start ${active === service.number ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-secondary"}`}
               >
                 <span className={`shrink-0 font-medium ${active === service.number ? "text-primary-foreground" : "text-primary"}`}>{service.number}</span>
-                <span className="sm:truncate lg:whitespace-normal">{service.title}</span>
+                <span className="truncate whitespace-nowrap lg:whitespace-normal">{service.title}</span>
               </a>
             ))}
           </div>
         </nav>
 
-        <section className="border-t border-border px-5 py-10 sm:px-6 sm:py-16">
-          <div className="mx-auto flex max-w-7xl flex-col gap-10 sm:gap-24 lg:gap-32">
+        <section className="border-t border-border px-6 py-12 sm:py-16">
+          <div className="mx-auto flex max-w-7xl flex-col gap-16 sm:gap-24 lg:gap-32">
           {services.map((service, index) => {
             const imageFirst = index % 2 === 0;
             return (
               <article id={`service-${service.number}`} key={service.number} data-service-number={service.number} className="scroll-mt-44">
-                  <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] items-center gap-x-4 gap-y-4 sm:gap-x-8 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6">
-                  <div className={`relative lg:row-span-2 lg:row-start-1 ${imageFirst ? "lg:col-start-1" : "lg:col-start-2"}`}>
-                    <div className="group relative aspect-square overflow-hidden rounded-2xl shadow-xl ring-1 ring-border sm:aspect-[4/3] lg:rounded-[2rem]">
+                  <div className="mx-auto grid max-w-7xl grid-cols-2 items-center gap-4 sm:gap-8 lg:gap-16">
+                  <div className={`relative ${imageFirst ? "order-1" : "order-2"}`}>
+                    <div
+                      aria-hidden
+                      className={`absolute -inset-2 rounded-[2.5rem] border border-primary/15 sm:-inset-3 lg:-inset-5 ${imageFirst ? "translate-x-4 translate-y-4" : "-translate-x-4 translate-y-4"}`}
+                    />
+                    <div className="group relative aspect-[4/3] overflow-hidden rounded-[1.25rem] shadow-2xl ring-1 ring-border sm:rounded-[2rem]">
                       <img src={service.image} width={1408} height={960} loading="lazy" alt={service.alt} className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.05]" />
-                      <span className="absolute bottom-2 left-2 inline-flex items-center rounded-full bg-background/80 px-2.5 py-0.5 font-display text-xs font-semibold text-primary backdrop-blur-md sm:bottom-4 sm:left-4 sm:text-sm">{service.number}</span>
+                      <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
+                      <span className="absolute bottom-2 left-2 inline-flex items-center rounded-full border border-primary-foreground/25 bg-background/70 px-2 py-0.5 font-display text-xs font-semibold text-primary-foreground backdrop-blur-md sm:bottom-4 sm:left-4 sm:px-3 sm:py-1 sm:text-sm">
+                        {service.number}
+                      </span>
                     </div>
                   </div>
-                  <div className={`min-w-0 lg:self-end ${imageFirst ? "lg:col-start-2" : "lg:col-start-1"}`}>
-                    <span className="font-display text-2xl font-semibold text-accent/70 sm:text-5xl lg:text-7xl">{service.number}</span>
-                    <h2 className="mt-1 font-display text-lg font-semibold leading-tight sm:mt-4 sm:text-3xl lg:text-4xl">{service.title}</h2>
-                    <p className="mt-2 text-sm leading-6 text-muted-foreground sm:mt-4 sm:text-lg sm:leading-7">{service.copy}</p>
-                  </div>
-                  <div className={`col-span-2 lg:col-span-1 lg:self-start ${imageFirst ? "lg:col-start-2" : "lg:col-start-1"}`}>
-                    <ul className="flex flex-wrap gap-1.5 sm:gap-2">
-                      {service.details.map((detail) => (
-                        <li key={detail} className="inline-flex items-center gap-1.5 rounded-full border border-border bg-secondary/50 px-3 py-1 text-xs text-foreground sm:px-4 sm:py-1.5 sm:text-base">
-                          <Check className="size-3 shrink-0 text-primary" />
-                          {detail}
-                        </li>
-                      ))}
-                    </ul>
-                    <Link to="/contact" className="mt-4 inline-flex items-center gap-2 border-b border-primary pb-1 text-sm font-medium text-primary transition-colors hover:text-foreground sm:mt-8 sm:text-base">
-                      Discuss this service <ArrowRight className="size-4" />
-                    </Link>
+                  <div className={`flex items-center px-1 sm:px-4 lg:px-0 ${imageFirst ? "order-2" : "order-1"}`}>
+                    <div className="max-w-lg">
+                      <span className="font-display text-2xl font-semibold text-accent/70 sm:text-6xl lg:text-7xl">{service.number}</span>
+                      <h2 className="mt-2 font-display text-base font-semibold leading-tight sm:mt-6 sm:text-3xl lg:text-4xl">{service.title}</h2>
+                      <p className="mt-2 text-xs leading-5 text-muted-foreground sm:mt-5 sm:text-lg sm:leading-7">{service.copy}</p>
+                      <ul className="mt-3 flex flex-wrap gap-1.5 sm:mt-8 sm:gap-2">
+                        {service.details.map((detail) => (
+                          <li key={detail} className="inline-flex items-center gap-1.5 rounded-full border border-border bg-secondary/50 px-2 py-1 text-[11px] leading-4 text-foreground sm:gap-2 sm:px-4 sm:py-1.5 sm:text-base sm:leading-6">
+                            <Check className="size-3 shrink-0 text-primary sm:size-3.5" />
+                            {detail}
+                          </li>
+                        ))}
+                      </ul>
+                      <Link to="/contact" className="mt-4 inline-flex items-center gap-2 border-b border-primary pb-1 text-sm font-medium text-primary transition-colors hover:text-foreground sm:mt-9 sm:text-base">
+                        Discuss this service <ArrowRight className="size-4" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </article>
