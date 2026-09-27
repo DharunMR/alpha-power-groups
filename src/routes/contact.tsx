@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
 
 import { PageShell } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";
